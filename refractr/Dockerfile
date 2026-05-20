@@ -1,4 +1,4 @@
-FROM nginx:1.26.2
+FROM nginx:1.30.1
 
 COPY --chown=nginx:nginx nginx/nginx.conf.template /etc/nginx/nginx.conf
 COPY --chown=nginx:nginx nginx/conf.d/default.conf nginx/conf.d/refractr.conf /etc/nginx/conf.d/
