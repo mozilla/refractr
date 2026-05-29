@@ -862,10 +862,9 @@ refracts:
 - www.mozilla.org/: status.mozilla.org
   status: 302
 
-#  SE-3189 then updated by SREIN-32
+#  SE-3189 then updated by SREIN-32, WT-1224
 - www.firefox.com/:
   - firefox.com
-  status: 302 # Consider removing after discussion with SEO team
 
 # SE-3189, SREIN-32
 - www.firefox.com/:
