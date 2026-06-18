@@ -1300,3 +1300,7 @@ refracts:
   - https://datacollective.mozillafoundation.org/datasets/: https://mozilladatacollective.com/datasets/
   - https://dev.datacollective.mozillafoundation.org/: https://mozilladatacollective.com/
   - https://dev.datacollective.mozillafoundation.org/datasets/abc123: https://mozilladatacollective.com/datasets/abc123
+
+# SVCSE-2844
+- balrog.mozilla.org/:
+    - balrog.services.mozilla.com
