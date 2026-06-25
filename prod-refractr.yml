@@ -1302,3 +1302,7 @@ refracts:
 # SVCSE-2844
 - balrog.mozilla.org/:
     - balrog.services.mozilla.com
+
+- postful.ai/:
+    - try.postful.ai
+    - trypostful.com
