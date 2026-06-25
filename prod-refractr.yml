@@ -433,7 +433,6 @@ refracts:
   # SE-1224
   - inhumanads.com
   - www.inhumanads.com
-  - staging.inhumanads.com
   status: 302
 
 - www.mozilla.org/: mozilla-podcasts.org
@@ -550,7 +549,6 @@ refracts:
 - www.mozilla.org/it/firefox/new/?utm_source=mozilla-it&utm_medium=referral:
   - mozilla.it
   - www.mozilla.it
-  - wwww.mozilla.it
 
 - www.mozilla.org/firefox/:
   # bug 838939
