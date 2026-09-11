@@ -1306,3 +1306,8 @@ refracts:
 - postful.ai/:
     - try.postful.ai
     - trypostful.com
+
+# SREIN-1768
+- soloist.ai/:
+    - blog.soloist.ai
+  preserve-path: false
