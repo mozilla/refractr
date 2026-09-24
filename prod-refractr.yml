@@ -872,6 +872,10 @@ refracts:
   status: 302
   preserve-path: false
 
+# SREIN-1815
+- www.firefox.com/: quiz.firefox.com
+  preserve-path: false
+
 # SE-3060 & SVCSE-350
 - dsts:
   - if: '$request_uri ~ ^/ytht(.*)$'
