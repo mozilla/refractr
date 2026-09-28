@@ -1342,8 +1342,52 @@ refracts:
   - https://treestatus.prod.lando.prod.cloudops.mozgcp.net/stack: https://lando.moz.tools/api/treestatus/stack
   - https://treestatus.prod.lando.prod.cloudops.mozgcp.net/swagger.json:  https://lando.moz.tools/api/treestatus/openapi.json
 
-# - lando.allizom.org/:
-        # stage.treestatus.mozilla-releng.net"
-        # https://api.stage.lando.nonprod.cloudops.mozgcp.net/
-# - lando-dev.allizom.org/:
-        # dev.treestatus.mozilla-releng.net
+# lando.allizom.org
+- dsts:
+  - '^/log(.*)': lando.allizom.org/api/treestatus/log$1
+  - '^/stack(.*)': lando.allizom.org/api/treestatus/stack$1
+  - '^/trees(.*)': lando.allizom.org/api/treestatus/trees$1
+  - /treestatus/: lando.allizom.org/treestatus/
+  - /swagger.json: lando.allizom.org/api/treestatus/openapi.json
+  - '^/(.*)': lando.allizom.org/$1
+  - /: lando.allizom.org/api/treestatus/openapi.json
+  srcs:
+  - api.stage.lando.nonprod.cloudops.mozgcp.net
+  - stage.treestatus.mozilla-releng.net
+  - stage.lando.nonprod.cloudops.mozgcp.net
+  - treestatus.stage.lando.nonprod.cloudops.mozgcp.net
+  tests:
+  - https://api.stage.lando.nonprod.cloudops.mozgcp.net/landing_jobs/ID/: https://lando.allizom.org/landing_jobs/ID/
+  - https://treestatus.stage.lando.nonprod.cloudops.mozgcp.net/treestatus/: https://lando.allizom.org/treestatus/
+  - https://stage.treestatus.mozilla-releng.net/:  https://lando.allizom.org/api/treestatus/openapi.json
+  - https://stage.treestatus.mozilla-releng.net/stack/ID: https://lando.allizom.org/api/treestatus/stack/ID
+  - https://stage.treestatus.mozilla-releng.net/swagger.json:  https://lando.allizom.org/api/treestatus/openapi.json
+  - https://stage.treestatus.mozilla-releng.net/trees/autoland: https://lando.allizom.org/api/treestatus/trees/autoland
+  - https://treestatus.stage.lando.nonprod.cloudops.mozgcp.net/:  https://lando.allizom.org/api/treestatus/openapi.json
+  - https://treestatus.stage.lando.nonprod.cloudops.mozgcp.net/stack: https://lando.allizom.org/api/treestatus/stack
+  - https://treestatus.stage.lando.nonprod.cloudops.mozgcp.net/swagger.json:  https://lando.allizom.org/api/treestatus/openapi.json
+
+# lando-dev.allizom.org
+- dsts:
+  - '^/log(.*)': lando-dev.allizom.org/api/treestatus/log$1
+  - '^/stack(.*)': lando-dev.allizom.org/api/treestatus/stack$1
+  - '^/trees(.*)': lando-dev.allizom.org/api/treestatus/trees$1
+  - /treestatus/: lando-dev.allizom.org/treestatus/
+  - /swagger.json: lando-dev.allizom.org/api/treestatus/openapi.json
+  - '^/(.*)': lando-dev.allizom.org/$1
+  - /: lando-dev.allizom.org/api/treestatus/openapi.json
+  srcs:
+  - api.dev.lando.nonprod.cloudops.mozgcp.net
+  - dev.treestatus.mozilla-releng.net
+  - dev.lando.nonprod.cloudops.mozgcp.net
+  - treestatus.dev.lando.nonprod.cloudops.mozgcp.net
+  tests:
+  - https://api.dev.lando.nonprod.cloudops.mozgcp.net/landing_jobs/ID/: https://lando-dev.allizom.org/landing_jobs/ID/
+  - https://treestatus.dev.lando.nonprod.cloudops.mozgcp.net/treestatus/: https://lando-dev.allizom.org/treestatus/
+  - https://dev.treestatus.mozilla-releng.net/:  https://lando-dev.allizom.org/api/treestatus/openapi.json
+  - https://dev.treestatus.mozilla-releng.net/stack/ID: https://lando-dev.allizom.org/api/treestatus/stack/ID
+  - https://dev.treestatus.mozilla-releng.net/swagger.json:  https://lando-dev.allizom.org/api/treestatus/openapi.json
+  - https://dev.treestatus.mozilla-releng.net/trees/autoland: https://lando-dev.allizom.org/api/treestatus/trees/autoland
+  - https://treestatus.dev.lando.nonprod.cloudops.mozgcp.net/:  https://lando-dev.allizom.org/api/treestatus/openapi.json
+  - https://treestatus.dev.lando.nonprod.cloudops.mozgcp.net/stack: https://lando-dev.allizom.org/api/treestatus/stack
+  - https://treestatus.dev.lando.nonprod.cloudops.mozgcp.net/swagger.json:  https://lando-dev.allizom.org/api/treestatus/openapi.json
