@@ -1315,3 +1315,35 @@ refracts:
 - soloist.ai/:
     - blog.soloist.ai
   preserve-path: false
+
+# Bug 2067621
+# lando.moz.tools
+- dsts:
+  - '^/log(.*)': lando.moz.tools/api/treestatus/log$1
+  - '^/stack(.*)': lando.moz.tools/api/treestatus/stack$1
+  - '^/trees(.*)': lando.moz.tools/api/treestatus/trees$1
+  - /treestatus/: lando.moz.tools/treestatus/
+  - /swagger.json: lando.moz.tools/api/treestatus/openapi.json
+  - '^/(.*)': lando.moz.tools/$1
+  - /: lando.moz.tools/api/treestatus/openapi.json
+  srcs:
+  - api.lando.services.mozilla.com
+  - lando.services.mozilla.com
+  - treestatus.mozilla-releng.net
+  - treestatus.prod.lando.prod.cloudops.mozgcp.net
+  tests:
+  - https://api.lando.services.mozilla.com/landing_jobs/ID/: https://lando.moz.tools/landing_jobs/ID/
+  - https://lando.services.mozilla.com/treestatus/: https://lando.moz.tools/treestatus/
+  - https://treestatus.mozilla-releng.net/:  https://lando.moz.tools/api/treestatus/openapi.json
+  - https://treestatus.mozilla-releng.net/stack/ID: https://lando.moz.tools/api/treestatus/stack/ID
+  - https://treestatus.mozilla-releng.net/swagger.json:  https://lando.moz.tools/api/treestatus/openapi.json
+  - https://treestatus.mozilla-releng.net/trees/autoland: https://lando.moz.tools/api/treestatus/trees/autoland
+  - https://treestatus.prod.lando.prod.cloudops.mozgcp.net/:  https://lando.moz.tools/api/treestatus/openapi.json
+  - https://treestatus.prod.lando.prod.cloudops.mozgcp.net/stack: https://lando.moz.tools/api/treestatus/stack
+  - https://treestatus.prod.lando.prod.cloudops.mozgcp.net/swagger.json:  https://lando.moz.tools/api/treestatus/openapi.json
+
+# - lando.allizom.org/:
+        # stage.treestatus.mozilla-releng.net"
+        # https://api.stage.lando.nonprod.cloudops.mozgcp.net/
+# - lando-dev.allizom.org/:
+        # dev.treestatus.mozilla-releng.net
