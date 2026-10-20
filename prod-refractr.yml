@@ -1315,3 +1315,25 @@ refracts:
 - soloist.ai/:
     - blog.soloist.ai
   preserve-path: false
+
+# Bug 2067621
+# lando.moz.tools
+- dsts:
+  - '^/log(.*)': lando.moz.tools/api/treestatus/log$1
+  - '^/stack(.*)': lando.moz.tools/api/treestatus/stack$1
+  - '^/trees(.*)': lando.moz.tools/api/treestatus/trees$1
+  - /treestatus/: lando.moz.tools/treestatus/
+  - /swagger.json: lando.moz.tools/api/treestatus/openapi.json
+  - '^/(.*)': lando.moz.tools/$1
+  - /: lando.moz.tools/api/treestatus/openapi.json
+  srcs:
+  - treestatus.mozilla-releng.net
+  tests:
+  - https://treestatus.mozilla-releng.net/:  https://lando.moz.tools/api/treestatus/openapi.json
+  - https://treestatus.mozilla-releng.net/stack/ID: https://lando.moz.tools/api/treestatus/stack/ID
+  - https://treestatus.mozilla-releng.net/swagger.json:  https://lando.moz.tools/api/treestatus/openapi.json
+  - https://treestatus.mozilla-releng.net/trees/autoland: https://lando.moz.tools/api/treestatus/trees/autoland
+
+- lando.moz.tools/:
+  - api.lando.services.mozilla.com
+  - lando.services.mozilla.com
