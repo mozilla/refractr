@@ -876,6 +876,14 @@ refracts:
 - www.firefox.com/: quiz.firefox.com
   preserve-path: false
 
+# TRU-179: Ledgerless (Trunkbooks) shutdown
+- www.firefox.com/:
+  - trunkbooks.com
+  - www.trunkbooks.com
+  - app.trunkbooks.com
+  - staging-app.trunkbooks.com
+  preserve-path: false
+
 # SE-3060 & SVCSE-350
 - dsts:
   - if: '$request_uri ~ ^/ytht(.*)$'
