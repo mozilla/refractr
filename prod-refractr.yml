@@ -1336,6 +1336,7 @@ refracts:
   - /: lando.moz.tools/api/treestatus/openapi.json
   srcs:
   - treestatus.mozilla-releng.net
+  - treestatus.prod.lando.prod.cloudops.mozgcp.net
   tests:
   - https://treestatus.mozilla-releng.net/:  https://lando.moz.tools/api/treestatus/openapi.json
   - https://treestatus.mozilla-releng.net/stack/ID: https://lando.moz.tools/api/treestatus/stack/ID
